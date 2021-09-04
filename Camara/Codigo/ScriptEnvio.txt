@@ -1,0 +1,15 @@
+
+#!/bin/bash
+. /var/www/html/macros/configfile.cfg
+
+#If you wish to disable notifications, create a file using "touch /home/pi/nomsgfile.lck"
+if [ -f $nomsg ]; then
+  logging no true "Message alerting has been disabled, exiting..."
+exit
+fi
+
+echo "termino" >/var/www/termino.txt
+MP4Box -add $1 /var/www/html/media/destination.mp4
+#curl -X POST https://api.telegram.org/bot1773688625:AAE7AE9B5sFashs_TBYUayh9iVOgDSl3g98/sendVideo -F chat_id=-1001456029879 -F video=@/var/www/html/media/destination.mp4
+curl -X POST https://api.telegram.org/bot1773688625:AAE7AE9B5sFashs_TBYUayh9iVOgDSl3g98/sendVideo -F chat_id=-1001456029879 -F video=@$1
+rm /var/www/html/media/destination.mp4
