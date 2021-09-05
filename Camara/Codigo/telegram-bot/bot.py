@@ -25,7 +25,7 @@ def command_list(update, context):
 
 
 if __name__ == '__main__':
-    updater = Updater(token='TOKEN', use_context=True)  # Use the token given to you by The Botfather
+    updater = Updater(token='YourToken', use_context=True)  # Use the token given to you by The Botfather
     # (https://core.telegram.org/bots)
 
     dp = updater.dispatcher
