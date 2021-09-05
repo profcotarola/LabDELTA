@@ -10,6 +10,6 @@ fi
 
 echo "termino" >/var/www/termino.txt
 MP4Box -add $1 /var/www/html/media/destination.mp4
-#curl -X POST https://api.telegram.org/bot1773688625:AAE7AE9B5sFashs_TBYUayh9iVOgDSl3g98/sendVideo -F chat_id=-1001456029879 -F video=@/var/www/html/media/destination.mp4
-curl -X POST https://api.telegram.org/bot1773688625:AAE7AE9B5sFashs_TBYUayh9iVOgDSl3g98/sendVideo -F chat_id=-1001456029879 -F video=@$1
+#curl -X POST https://api.telegram.org/botYourToken/sendVideo -F chat_id=-1001456029879 -F video=@/var/www/html/media/destination.mp4
+curl -X POST https://api.telegram.org/botYourToken/sendVideo -F chat_id=-1001456029879 -F video=@$1
 rm /var/www/html/media/destination.mp4
